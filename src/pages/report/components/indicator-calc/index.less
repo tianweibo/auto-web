@@ -1,0 +1,65 @@
+.title {
+  font-weight: 700;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.defaultBtn {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 6px;
+  width: 80px;
+  cursor: pointer;
+  float: left;
+  margin-right: 20px;
+  border: 1px solid #1890ff;
+}
+.choiceBtn {
+  background: #1890ff;
+  color: #fff;
+}
+.clearFloat:after,
+.clearFloat:before {
+  content: '';
+  display: table;
+}
+.clearFloat:after {
+  clear: both;
+}
+.clearFloat {
+  zoom: 1;
+}
+.eventBox {
+  float: left;
+  padding: 10px;
+  width: 265px;
+  height: 340px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  border: 1px solid #333;
+  border-radius: 6px;
+  :global {
+    .ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+      height: 26px;
+      line-height: 26px;
+    }
+  }
+  .itemName {
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 150px;
+  }
+  .iconCss {
+    float: right;
+    margin-top: 15px;
+    cursor: pointer;
+  }
+}
+.arrow {
+  float: left;
+  margin: 150px 10px;
+}
