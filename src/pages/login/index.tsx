@@ -32,16 +32,18 @@ const Login = () => {
       return;
     }
     const res: any = await login(obj);
+    debugger
     if (res.status == 0) {
-      history.push({
-        pathname: '/event',
-      });
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('info', JSON.stringify(res.data.data));
       OmegaLogger.setAsyncConfig({
         merchant_id: res?.data?.data?.id, //shopid
         distinct_id: res?.data?.data?.id, //userid
       });
+      history.push({
+        pathname: '/user',
+      });
+      
     }
   };
   return (

@@ -34,14 +34,8 @@ export default function IndexLayout({
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [info, setInfo] = useState({});
   const [tempEnum, setTempEnum] = useState({
-    '/app': 'home',
-    '/event': 'home',
-    '/attribute': 'home',
-    '/indicator': 'home',
     '/user': 'home',
-    '/label': 'home',
-    '/report/create': 'actreport',
-    '/report': 'actreport',
+    '/productLine':'home'
   });
   const [form] = Form.useForm();
   const layoutStyle = {
@@ -59,11 +53,11 @@ export default function IndexLayout({
     setselectedKeys(e.key);
     if (e.key === 'home') {
       history.push({
-        pathname: '/event',
+        pathname: '/user',
       });
     } else if (e.key === 'actreport') {
       history.push({
-        pathname: '/report',
+        pathname: '/user',
       });
     }
   };
@@ -206,31 +200,6 @@ export default function IndexLayout({
                   defaultOpenKeys={[history.location.pathname]}
                   style={{ height: '100%', borderRight: 0 }}
                 >
-                  <SubMenu key="/event" icon={<LaptopOutlined />} title="事件">
-                    <Menu.Item key="event">
-                      <Link to="/event">事件管理</Link>
-                    </Menu.Item>
-                  </SubMenu>
-                  {/* <SubMenu key="/attribute" icon={<LaptopOutlined />} title="属性">
-                  <Menu.Item key="attribute">
-                    <Link to="/attribute">属性管理</Link>
-                  </Menu.Item>
-                </SubMenu> */}
-                  <SubMenu
-                    key="/indicator"
-                    icon={<LaptopOutlined />}
-                    title="指标"
-                  >
-                    <Menu.Item key="indicator">
-                      <Link to="/indicator">指标列表</Link>
-                    </Menu.Item>
-                  </SubMenu>
-                  <SubMenu key="/app" icon={<AppstoreOutlined />} title="应用">
-                    <Menu.Item key="app">
-                      <Link to="/app">应用管理</Link>
-                    </Menu.Item>
-                  </SubMenu>
-                  {info.role == 10 && (
                     <SubMenu key="/user" icon={<UserOutlined />} title="用户">
                       <Menu.Item key="user">
                         <Link to="/user">用户管理</Link>
@@ -239,28 +208,6 @@ export default function IndexLayout({
                         <Link to="/productLine">产品线</Link>
                       </Menu.Item>
                     </SubMenu>
-                  )}
-                  {info.role == 10 && (
-                    <SubMenu key="/label" icon={<TagOutlined />} title="标签">
-                      <Menu.Item key="label">
-                        <Link to="/label">标签管理</Link>
-                      </Menu.Item>
-                    </SubMenu>
-                  )}
-                </Menu>
-              ) : null}
-              {selectedKeys === 'analysis' ? (
-                <Menu
-                  mode="inline"
-                  defaultSelectedKeys={['1']}
-                  defaultOpenKeys={['sub1']}
-                  style={{ height: '100%', borderRight: 0 }}
-                >
-                  <SubMenu key="sub1" icon={<LaptopOutlined />} title="指标">
-                    <Menu.Item key="1">
-                      <Link to="/tag">指标列表</Link>
-                    </Menu.Item>
-                  </SubMenu>
                 </Menu>
               ) : null}
               {selectedKeys === 'actreport' ? (
