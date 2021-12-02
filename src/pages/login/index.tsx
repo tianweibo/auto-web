@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Form, Input, Button, message } from 'antd';
-import { login } from './service';
+import { login,isLogin } from './service';
 import userIcon from '@/assets/userIcon.png';
 import passIcon from '@/assets/passIcon.png';
 import styles from './index.less';
-import OmegaLogger from 'buried-points-sdk-all';
 import { history } from 'umi';
 
 const Login = () => {
@@ -36,10 +35,6 @@ const Login = () => {
     if (res.status == 0) {
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('info', JSON.stringify(res.data.data));
-      OmegaLogger.setAsyncConfig({
-        merchant_id: res?.data?.data?.id, //shopid
-        distinct_id: res?.data?.data?.id, //userid
-      });
       history.push({
         pathname: '/user',
       });

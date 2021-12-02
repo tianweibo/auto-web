@@ -28,7 +28,6 @@
     "@umijs/preset-react": "1.x",
     "antd": "^4.12.3",
     "array-move": "^3.0.1",
-    "buried-points-sdk-all": "git+ssh://git@git.dev.enbrands.com:fe-construction/buried-points-sdk-all.git",
     "classnames": "^2.2.6",
     "copy-to-clipboard": "^3.3.1",
     "echarts": "^5.1.2",
